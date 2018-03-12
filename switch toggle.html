@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Motion | switch</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+	/*bootstrap cdn*/
+		.container{
+			width:500px;
+			margin: 0 auto;
+		}
+		.switch
+		{
+			width: 200px;
+			height: 100px;
+			background-color: #E5E5E5;
+			z-index: 0;
+			margin: 0;
+			padding: 0;
+			appearance:none;
+			border: none;
+			cursor: pointer;
+			position: relative;
+			border-radius: 100px; 
+		}
+		.switch:before{
+			content:  ' ';
+			position: absolute;
+			left: 5px;
+			right: 5px;
+			width: 190px;
+			height: 90px;
+			background-color: white;
+			z-index: 1;
+			border-radius: 95px;
+
+
+		}
+		.switch:after
+		{
+			content: ' ';
+			width: 88px;
+			height: 88px;
+			border-radius: 86px;
+			z-index: 2;
+			background-color: white;
+			position: absolute;
+			transition-duration: 500ms;
+			left: 6px;
+			right: 6px;
+			box-shadow: 0 2px 5px #999999;
+
+		}
+		.switchOn, .switchOn:before{
+			background:#4cd964; !important;
+
+		}
+		.switchOn:after
+		{
+			left: 105px;
+		}
+	</style>
+	<script
+	          src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			$('.switch').click(function(){
+				$(this).toggleClass("switchOn");
+
+			});
+		});
+		// jquery
+	</script>
+</head>
+<body>
+	<!-- .container begins -->
+	<div class="container" align="center">
+		<form>			
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email ID</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email ID">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Put your password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">street</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="327 Hickling Street">
+  </div>
+  <!-- .form-group (Address) -->
+  <div class="form-group">
+    <label for="inputAddress2">Address</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity" placeholder="Barrie">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>ON</option>
+        <option>Bc</option>
+
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip" placeholder="L4M 3v6">
+    </div>
+  </div>
+  <!-- .form -row -->
+  <div class="form-group">
+    <div class="form-check">
+     
+		<div class="switch "></div>
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <!-- .form-group -->
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+<!-- form -->
+	</div>
+	<!-- .container -->
+
+</body>
+</html>
